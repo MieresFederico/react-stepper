@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/system';
+import { Layout } from './components/Layout';
+import { theme } from './theme';
+import { PersonalData } from './components/PersonalData';
+import { Stepper } from './components/Stepper';
+import { BankInfo } from './components/BankInfo';
+import { Description } from './components/Description';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const steps = [
+  {
+    id: 1,
+    title: 'Personal Data',
+    content: PersonalData,
+  },
+  {
+    id: 2,
+    title: 'Bank Accounts',
+    content: BankInfo,
+    optional: true,
+  },
+  {
+    id: 3,
+    title: 'More Info',
+    content: Description,
+  }
+];
 
-export default App;
+export const App = () => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Layout>
+      <Stepper formId="react-stepper" steps={steps} />
+    </Layout>
+  </ThemeProvider>
+);

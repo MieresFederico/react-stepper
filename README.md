@@ -1,7 +1,18 @@
+## Project description
+
+I tried to do a generic stepper that recieve a config of each step and get abstracted from the logic of the stepper
+Example: https://react-stepper-fa0ee.web.app
+## Technologies that I used
+
+- React 17
+- React Hook Form
+- Material UI
+- yup
+- Testing
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
